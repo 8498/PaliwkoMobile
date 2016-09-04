@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MobilePaliwko</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="Zaloguj">Zaloguj</string>
+    <string name="PALIWKO">PALIWKO</string>
+    <string name="title_activity_dashboard">DashboardActivity</string>
+    <string name="Mapa">Mapa</string>
+    <string name="Stacje">Stacje</string>
+    <string name="title_activity_web">WebActivity</string>
+    <string name="title_activity_stations">StationsActivity</string>
+
+</resources>

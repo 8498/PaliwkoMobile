@@ -26,11 +26,11 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class Stations extends AsyncTask<String, Void, String>
+public class StationsRequest extends AsyncTask<String, Void, String>
 {	
 	private DashboardActivity dashboardActivity;
 
-	public Stations(DashboardActivity dashboardActivity) {
+	public StationsRequest(DashboardActivity dashboardActivity) {
 		this.dashboardActivity = dashboardActivity;
 	}
 
@@ -74,16 +74,33 @@ public class Stations extends AsyncTask<String, Void, String>
 			//System.out.println("result3: " + arrJson.getString(0));
 			//System.out.println(json_data.get("name"));
 			
-			ArrayList<String> listdata = new ArrayList<String>();
+			JSONObject json_ob = new JSONObject(arrJson.getString(1));
+			System.out.println("Jarray :" + json_ob.get("name"));
+			
+			
+			ArrayList<JSONObject> listdata = new ArrayList<JSONObject>();
 			
 			if (arrJson != null) { 
 				   for (int i=0;i<arrJson.length();i++){ 
-				    listdata.add(arrJson.get(i).toString());
+				    listdata.add(arrJson.getJSONObject(i));
 				   } 
 				} 
 			
+			ArrayList<String> listdata2 = new ArrayList<String>();
+			if (listdata != null) { 
+				   for (int i=0;i<listdata.size();i++){ 
+				    listdata2.add(arrJson.getJSONObject(i).getString("name") + "\n" + 
+				    arrJson.getJSONObject(i).getString("created_at") + "\n" + 
+				    "LPG: " + arrJson.getJSONObject(i).getString("LPG") + " | " + 
+				    "ON: " + arrJson.getJSONObject(i).getString("ON") + " | " + 
+				    "PB95: " + arrJson.getJSONObject(i).getString("PB95") + " | " + 
+				    "PB98: " + arrJson.getJSONObject(i).getString("PB98"));
+				   } 
+				} 
+			
+			
 			System.out.println("ok");
-			dashboardActivity.goToStations(listdata);
+			dashboardActivity.goToStations(listdata2);
 			
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block

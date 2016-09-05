@@ -26,7 +26,7 @@ public class DashboardActivity extends Activity {
 	{
 		/*Intent intent = new Intent(this, StationsActivity.class);
 		startActivity(intent);*/
-		new Stations(this).execute();
+		new StationsRequest(this).execute();
 		System.out.println("click");
 	}
 	

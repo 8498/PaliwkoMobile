@@ -4,15 +4,16 @@
     android:layout_height="match_parent"
     tools:context="${relativePackage}.${activityClass}" >
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/nameField"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="80dp"
-        android:text="@string/PALIWKO"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:text="name"
+        android:onClick="nameClear"
+        android:inputType="textPersonName" />
     
     <EditText
         android:id="@+id/emailField"
@@ -36,25 +37,23 @@
         android:onClick="passwordClear"
         android:inputType="textPassword" >
     </EditText>
-
+    
     <Button
-        android:id="@+id/loginButton"
+        android:id="@+id/registerButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="200dp"
-        android:onClick ="login"
-        android:text="@string/Zaloguj" />
-
-    <Button
-        android:id="@+id/goToRegisterButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="52dp"
+        android:layout_marginBottom="62dp"
         android:text="@string/Register"
-        android:onClick="goToRegister" />
+        android:onClick="register" />
+
+    <Button
+        android:id="@+id/backButton3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="@string/Back"
+        android:onClick="backToLogin" />
 
 </RelativeLayout>

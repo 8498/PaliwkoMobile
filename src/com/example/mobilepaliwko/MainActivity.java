@@ -31,12 +31,20 @@ public class MainActivity extends Activity {
 	}
 	
 	public void login(View v){
-		System.out.println("click");
 		new SigninActivity(this).execute(email.getText().toString(),password.getText().toString());
-	}	
+	}
+	
+	public void goToRegister(View v){
+		goToRegisterA();
+	}
 	
 	public void goToDashboard(){
 		Intent intent = new Intent(this, DashboardActivity.class);
+		startActivity(intent);
+	}
+	
+	public void goToRegisterA(){
+		Intent intent = new Intent(this, RegisterActivity.class);
 		startActivity(intent);
 	}
 	

@@ -10,5 +10,6 @@
     <string name="Stacje">Stacje</string>
     <string name="title_activity_web">WebActivity</string>
     <string name="title_activity_stations">StationsActivity</string>
+    <string name="Back">Back</string>
 
 </resources>

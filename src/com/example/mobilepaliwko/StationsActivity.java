@@ -1,9 +1,9 @@
 package com.example.mobilepaliwko;
 
-import java.util.ArrayList;
-
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -24,5 +24,11 @@ public class StationsActivity extends Activity {
 		ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,extras.getStringArrayList("lista"));
         
 		list.setAdapter(arrayAdapter); 
+	}
+	
+	public void backToDashboard(View v)
+	{
+		Intent intent = new Intent(this, DashboardActivity.class);
+		startActivity(intent);
 	}
 }

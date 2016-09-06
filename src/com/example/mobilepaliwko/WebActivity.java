@@ -3,7 +3,6 @@ package com.example.mobilepaliwko;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
-import android.webkit.GeolocationPermissions;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -19,7 +18,6 @@ public class WebActivity extends Activity {
 		
 		WebView webView = new WebView(this);
 		
-		
 		WebSettings webSettings = webView.getSettings();
 		webSettings.setJavaScriptEnabled(true);
 		webSettings.setGeolocationEnabled(true);
@@ -29,7 +27,6 @@ public class WebActivity extends Activity {
 	    webSettings.setDomStorageEnabled(true);
 	    webView.setWebChromeClient(new WebChromeClient());
 
-		
 		webView.loadUrl("http://10.0.2.2:8000/map");
 		
 		setContentView(webView);

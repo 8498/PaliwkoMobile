@@ -1,18 +1,15 @@
 package com.example.mobilepaliwko;
 
 import java.io.BufferedReader;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URI;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
@@ -22,9 +19,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.os.AsyncTask;
-import android.os.Bundle;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 
 public class StationsRequest extends AsyncTask<String, Void, String>
 {	
@@ -68,15 +62,7 @@ public class StationsRequest extends AsyncTask<String, Void, String>
 	protected void onPostExecute(String result) {
 		System.out.println("result2: " + result);
 		try {
-			//JSONObject json_data= new JSONObject(result);
 			JSONArray arrJson = new JSONArray(result);
-			//JSONObject json_data = new JSONObject(arrJson.getString(0));
-			//System.out.println("result3: " + arrJson.getString(0));
-			//System.out.println(json_data.get("name"));
-			
-			JSONObject json_ob = new JSONObject(arrJson.getString(1));
-			System.out.println("Jarray :" + json_ob.get("name"));
-			
 			
 			ArrayList<JSONObject> listdata = new ArrayList<JSONObject>();
 			
